@@ -1,6 +1,7 @@
 '''
 I wrote this script inspired by that of Timur Khodzhaev. http://www.nukepedia.com/python/nodegraph/autobackdrop-replacement/finishdown?miv=1&mjv=2
 
+Version 1.0
 Copyright (c) 2018 Franklin VFX Co.
 '''
 

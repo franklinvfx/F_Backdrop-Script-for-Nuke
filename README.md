@@ -30,4 +30,4 @@
 
 
 
-For the creation of this tool, I was strongly inspired by that of Timur Khodzhaev (http://www.nukepedia.com/python/nodegraph/autobackdrop-replacement)
+For the creation of this tool, I was strongly inspired by that of [Timur Khodzhaev](http://www.nukepedia.com/python/nodegraph/autobackdrop-replacement)

@@ -1,13 +1,12 @@
 '''
 1 - Copy / paste the following lines into your local menu.py
 2 - Copy files from "icons" and "python" folders into your .nuke folder
-3 - I hope you will like it
 '''
 
 import nuke, nukescripts
 nuke.pluginAddPath('./icons/Franklin');
 nuke.pluginAddPath('./python/Franklin');
 
-import F_Backdrop as F_Backdrop
-nukescripts.F_Backdrop = F_Backdrop.F_Backdrop
-nuke.menu('Nodes').addCommand( 'Other/Backdrop', 'F_Backdrop.F_Backdrop()', '#b', 'Backdrop.png')
+import F_Backdrop
+nukescripts.autoBackdrop = F_Backdrop.autoBackdrop # Original backdrop function replacement
+nuke.menu('Nodes').addCommand( 'Other/Backdrop', 'F_Backdrop.autoBackdrop()', 'alt+b', 'Backdrop.png')

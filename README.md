@@ -1,7 +1,7 @@
 # F Backdrop
 <strong>Backdrop with simple options to use.</strong>
 
-<img class="aligncenter wp-image-2249 size-full" src="http://franklinvfx.com/wp-content/uploads/2019/01/CamShake_intro.0001-1024x491.png" alt="" />
+<img class="aligncenter wp-image-2249 size-full" src="http://franklinvfx.com/wp-content/uploads/2019/01/Capture2.png" alt="" />
 
 - Simply display a text in the backdrop, choose its size and position.
 - With a single button you can enlarge or reduce the backdrop in the NodeGraph.

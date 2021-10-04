@@ -82,9 +82,9 @@ def autoBackdrop():
 
     n = nuke.nodes.BackdropNode(xpos=bdX, bdwidth=bdW, ypos=bdY,
                                 bdheight=bdH,
-                                tile_color=int('%02x%02x%02x%02x' % (R*255,
-                                                                     G*255,
-                                                                     B*255,
+                                tile_color=int('%02x%02x%02x%02x' % (int(R*255),
+                                                                     int(G*255),
+                                                                     int(B*255),
                                                                      255), 16),
                                 note_font_size=50, z_order=zOrder)
 
@@ -99,8 +99,8 @@ def autoBackdrop():
     space1 = nuke.Text_Knob('S01', ' ', ' ')
     space2 = nuke.Text_Knob('S02', ' ', ' ')
 
-    grow = nuke.PyScript_Knob('grow', ' <img src="F_scalep.png">', "n=nuke.thisNode()\n\ndef grow(node=None,step=50):\n    try:\n        if not node:\n            n=nuke.selectedNode()\n        else:\n            n=node\n            n['xpos'].setValue(n['xpos'].getValue()-step)\n            n['ypos'].setValue(n['ypos'].getValue()-step)\n            n['bdwidth'].setValue(n['bdwidth'].getValue()+step*2)\n            n['bdheight'].setValue(n['bdheight'].getValue()+step*2)\n    except:\n        print('Error:: %s' % e)\n\ngrow(n,50)")
-    shrink = nuke.PyScript_Knob('shrink', ' <img src="F_scalem.png">', "n=nuke.thisNode()\n\ndef shrink(node=None,step=50):\n    try:\n        if not node:\n            n=nuke.selectedNode()\n        else:\n            n=node\n            n['xpos'].setValue(n['xpos'].getValue()+step)\n            n['ypos'].setValue(n['ypos'].getValue()+step)\n            n['bdwidth'].setValue(n['bdwidth'].getValue()-step*2)\n            n['bdheight'].setValue(n['bdheight'].getValue()-step*2)\n    except:\n        print('Error:: %s' % e)\n\nshrink(n,50)")
+    grow = nuke.PyScript_Knob('grow', ' <img src="F_scalep.png">', "n=nuke.thisNode()\n\ndef grow(node=None,step=50):\n    try:\n        if not node:\n            n=nuke.selectedNode()\n        else:\n            n=node\n            n['xpos'].setValue(n['xpos'].getValue()-step)\n            n['ypos'].setValue(n['ypos'].getValue()-step)\n            n['bdwidth'].setValue(n['bdwidth'].getValue()+step*2)\n            n['bdheight'].setValue(n['bdheight'].getValue()+step*2)\n    except:\n        pass\ngrow(n,50)")
+    shrink = nuke.PyScript_Knob('shrink', ' <img src="F_scalem.png">', "n=nuke.thisNode()\n\ndef shrink(node=None,step=50):\n    try:\n        if not node:\n            n=nuke.selectedNode()\n        else:\n            n=node\n            n['xpos'].setValue(n['xpos'].getValue()+step)\n            n['ypos'].setValue(n['ypos'].getValue()+step)\n            n['bdwidth'].setValue(n['bdwidth'].getValue()-step*2)\n            n['bdheight'].setValue(n['bdheight'].getValue()-step*2)\n    except:\n        pass\nshrink(n,50)")
 
     colorandom = nuke.PyScript_Knob('colorandom', ' <img src="ColorBars.png">', "import colorsys, random\nn=nuke.thisNode()\nR,G,B= colorsys.hsv_to_rgb(random.random(),.1+random.random()*.15,.15+random.random()*.15)\nn['tile_color'].setValue( int('%02x%02x%02x%02x' % (R*255,G*255,B*255,255), 16 ) )")
 
